@@ -1,0 +1,41 @@
+<mat-toolbar>
+  <button
+    type="button"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="sidebarService.toggle()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>CashInk</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<mat-expansion-panel
+  *ngFor="let item of userService.menu"
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-icon>{{ item.icon }}</mat-icon>
+    </mat-panel-title>
+    <mat-panel-description>
+      {{ item.title }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p>I'm visible because I am open</p>
+</mat-expansion-panel>
+<mat-expansion-panel
+  hideToggle
+  (click)="userService.logout()"
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-icon>exit_to_app</mat-icon>
+    </mat-panel-title>
+    <mat-panel-description>
+      Logout
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>

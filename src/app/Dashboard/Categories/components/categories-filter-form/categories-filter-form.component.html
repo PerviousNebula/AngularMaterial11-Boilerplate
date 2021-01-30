@@ -1,0 +1,61 @@
+<mat-grid-list
+  cols="3"
+  [rowHeight]="isMobile ? '120px' : '70px'"
+  [gutterSize]="isMobile ? '0px' : '10px'"
+>
+  <form
+    [formGroup]="categoriesFg"
+    (ngSubmit)="filter()"
+  >
+    <mat-grid-tile
+      [colspan]="isMobile ? 3 : 1"
+      [rowspan]="isMobile ? 1 : 2"
+    >
+      <mat-grid-tile-header>
+        <label>Name</label>
+      </mat-grid-tile-header>
+      <input
+        formControlName="name"
+        type="text"
+        autocomplete="off"
+        placeholder="Product category name"
+      />
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="isMobile ? 3 : 1"
+      [rowspan]="isMobile ? 1 : 2"
+    >
+      <mat-grid-tile-header>
+        <label>Visibility</label>
+      </mat-grid-tile-header>
+      <button
+        class="w-100"
+        type="button"
+        mat-raised-button
+        [color]="categoriesFg.value.archive === null ? '' : categoriesFg.value.archive === false ? 'primary' : 'warn'"
+        matBadgePosition="before"
+        matBadgeColor="warn"
+        (click)="changeArchive()"
+      >
+        <span *ngIf="categoriesFg.value.archive === null">All</span>
+        <span *ngIf="categoriesFg.value.archive === false">Online</span>
+        <span *ngIf="categoriesFg.value.archive === true">Offline</span>
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="isMobile ? 3 : 1"
+      [rowspan]="isMobile ? 1 : 2"
+    >
+      <div class="w-100 text-right">
+        <button
+          class="border-radius-15"
+          [class]="isMobile ? 'w-100' : 'w-50'"
+          type="submit"
+          mat-raised-button
+        >
+          Search
+        </button>
+      </div>
+    </mat-grid-tile>
+  </form>
+</mat-grid-list>

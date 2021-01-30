@@ -1,0 +1,32 @@
+<div class="text-center">
+  <div style="margin-bottom: 50px;">
+    <h2>Forget your password?</h2>
+    <p style="color: gray">Enter your email below, and we'll send you the Reset Link</p>
+  </div>
+  <div class="forgetFormContainer">
+    <form [formGroup]="forgetFg" (ngSubmit)="forget()" novalidate>
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input
+          formControlName="email"
+          type="email"
+          matInput
+          autocomplete="off"
+        />
+        <mat-error *ngIf="forgetFg.controls.email.invalid">{{ emailError }}</mat-error>
+      </mat-form-field>
+      <button
+        type="submit"
+        mat-raised-button
+        [disabled]="forgetFg.invalid"
+        color="accent"
+        style="margin-bottom: 25px; width:100%"
+      >
+        Send Reset Link
+      </button>
+    </form>
+    <a routerLink="/auth/login" style="color: gray;">
+      Back to Login
+    </a>
+  </div>
+</div>

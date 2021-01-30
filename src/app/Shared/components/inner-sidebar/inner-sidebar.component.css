@@ -1,0 +1,18 @@
+.mat-icon {
+    font-size: 25px;
+}
+
+mat-grid-tile:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #606060;
+    /* color: #e33c28; */
+    text-align: center;
+}
+
+span {
+    display: block;
+    font-size: 0.7rem;
+}

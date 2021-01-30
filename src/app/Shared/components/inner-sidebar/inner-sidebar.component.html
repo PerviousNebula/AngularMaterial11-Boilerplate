@@ -1,0 +1,20 @@
+<div style="width: 90px">
+  <mat-grid-list cols="1" rowHeight="1:1">
+    <mat-grid-tile
+      class="pointer"
+      *ngFor="let item of userService.menu"
+      routerLinkActive="active"
+    >
+      <a [routerLink]="'/dashboard' + item.url">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span class="display">{{ item.title }}</span>
+      </a>
+    </mat-grid-tile>
+    <mat-grid-tile
+      class="pointer"
+      (click)="userService.logout()"
+    >
+        <mat-icon>exit_to_app</mat-icon>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,64 @@
+<div class="text-center">
+  <div style="margin-bottom: 50px;">
+    <h2>Welcome!</h2>
+    <p style="color: gray">Sign in by entering the information below</p>
+  </div>
+  <div class="loginFormContainer">
+    <form [formGroup]="loginFg" (ngSubmit)="login()" novalidate>
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input
+          formControlName="email"
+          type="email"
+          matInput
+          autocomplete="off"
+        />
+        <mat-error *ngIf="loginFg.controls.email.invalid">{{ emailError }}</mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline" style="margin-bottom: 0;">
+        <mat-label>Password</mat-label>
+        <input
+          formControlName="password"
+          type="password"
+          matInput
+        />
+        <mat-error *ngIf="loginFg.controls.password.errors?.required">Password is required</mat-error>
+      </mat-form-field>
+      <mat-grid-list cols="2" rowHeight="20px">
+        <mat-grid-tile>
+          <div class="text-left" style="width: 100%">
+            <label class="pointer" style="color: gray">
+              <input
+                formControlName="remember"
+                type="checkbox"
+              /> Remember Me
+            </label>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="text-right" style="width: 100%">
+            <a routerLink="/auth/forget" style="color: gray;">Forget Password</a>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <button
+        type="submit"
+        mat-raised-button
+        [disabled]="loginFg.invalid || loading"
+        color="accent"
+        style="margin-top:25px; width:100%"
+      >
+        <span *ngIf="!loading; else loadingChanges">Continue</span>
+        <ng-template #loadingChanges>
+            <mat-spinner 
+              color="accent"
+              diameter="30"
+              style="margin:0 auto;"
+            >
+            </mat-spinner>
+        </ng-template>
+      </button>
+    </form>
+  </div>
+</div>

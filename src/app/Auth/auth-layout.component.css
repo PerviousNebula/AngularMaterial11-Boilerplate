@@ -1,0 +1,34 @@
+#auth-div {
+    background-color: #eadfd8;
+    display: block;
+    min-height: 100%;
+    top: 0;
+}
+
+.container {
+    box-shadow: 0 10px 2px -2px rgba(0,0,0,0.1);
+    margin: 0 60px;
+    padding-top: 40px;
+}
+
+.img-logo {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+mat-card {
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 922px) {
+    .container { margin: 0; }
+}

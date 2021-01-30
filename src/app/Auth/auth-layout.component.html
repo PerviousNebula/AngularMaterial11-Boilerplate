@@ -1,0 +1,24 @@
+<div id="auth-div">
+  <div class="container">
+    <mat-grid-list [cols]="!isMobile ? 2 : 1" rowHeight="550px">
+      <mat-grid-tile>
+        <mat-card>
+          <img
+            loading="lazy"
+            class="img-logo"
+            src="assets/images/logo.png"
+            alt="logo"
+          />
+          <router-outlet></router-outlet>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="!isMobile">
+        <img
+          loading="lazy"
+          src="assets/images/login_bg.jpg"
+          alt="background"
+        />
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

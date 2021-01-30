@@ -1,0 +1,21 @@
+<div class="inner-container animate__animated animate__faster animate__fadeIn">
+  <h2 class="mb-10 text-primary">Product Categories</h2>
+
+  <div class="mat-elevation-z8">
+    <mat-card>
+      <app-categories-filter-form
+        (formSubmitted)="filter($event)"
+      >
+      </app-categories-filter-form>
+    </mat-card>
+  </div>
+  <ng-container *ngIf="categoryResp$ | async as data">
+    <div class="mat-elevation-z8">
+      <app-categories-table
+        [data]="data"
+        (pagination)="handlePageChange($event)"
+      >
+      </app-categories-table>
+    </div>
+  </ng-container>
+</div>

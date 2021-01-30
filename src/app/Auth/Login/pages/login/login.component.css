@@ -1,0 +1,7 @@
+.mat-form-field { width: 100%; }
+
+.loginFormContainer { padding: 0 70px; }
+ 
+@media only screen and (max-width: 922px) {
+    .loginFormContainer { padding: 0; }
+}

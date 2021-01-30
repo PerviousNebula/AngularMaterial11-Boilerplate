@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.active {
+    background-color: #3f51b5 !important;
+    transition: ease-in .3s;
+}
+.active a {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.inner-container { margin: 20px !important; }
+
+.background-secondary { background-color: #eee !important; }
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+.badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+}
+.badge-pill {
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 10rem;
+}
+.badge-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.border-radius-15 {
+    border-radius: 15px !important;
+}
+
+.fab {
+    position: absolute !important;
+    bottom: 40px !important;
+    right: 15px !important;
+}
+
+.pos-relative {
+    position: relative !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.m-10 { margin: 10px !important; }
+.mb-10 { margin-bottom: 10px !important; }
+.mr-10 { margin-right: 10px !important;}
+.ml-2 { margin-left: 20px !important; }
+.mt-4 { margin-top: 40px !important;}
+
+.p-2 { padding: 20px !important; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right; }
+
+.text-primary { color: #3f51b5 !important; }
+.text-success { color: green !important }
+.text-danger { color: red !important }
+
+.pointer { cursor: pointer; }
+
+.w-100 { width: 100% !important; }
+.w-50 { width: 50% !important; }
+
